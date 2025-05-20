@@ -10,6 +10,7 @@ public class Node {
         this.key = key;
         this.left = null;
         this.right = null;
-        this.height = 0;
+        this.height = 1;
     }
 }
+
