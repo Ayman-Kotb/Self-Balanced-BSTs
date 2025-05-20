@@ -1,9 +1,9 @@
 package BSTs;
 
-public interface BSTOperations {
-   boolean insert(Node x);
-   boolean delete (Node x);
-   boolean search (Node x);
+public interface BSTOperations<T extends Comparable<T>> {
+   boolean insert(T key);
+   boolean delete(T key);
+   boolean search(T key);
    int size();
    int Height();
 }

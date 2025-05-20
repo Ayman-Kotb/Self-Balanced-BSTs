@@ -1,16 +1,15 @@
 package BSTs;
 
-public class Node {
-    public int key;
-    public Node left;
-    public Node right;
+public class Node<T extends Comparable<T>> {
+    public T key;
+    public Node<T> left;
+    public Node<T> right;
     public int height;
 
-    public Node(int key) {
+    public Node(T key) {
         this.key = key;
         this.left = null;
         this.right = null;
         this.height = 1;
     }
 }
-
