@@ -34,7 +34,7 @@ public class AVLTree<T extends Comparable<T>> implements BSTOperations<T> {
     }
 
     @Override
-    public int Height() {
+    public int height() {
         return root == null ? 0 : root.height;
     }
 }

@@ -6,15 +6,44 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("NO main");
         RedBlackTree<Integer> riri = new RedBlackTree<>();
-        riri.insert(5);
-        riri.insert(6);
-        riri.insert(7);
-        riri.insert(4);
-        riri.insert(1);
-        riri.insert(10);
-        riri.insert(8);
+        System.out.println("hamada");
+        for (int i = 1; i <= 15; i++) {
+            riri.insert(i);
+        }
+        riri.insert(50);
+        riri.insert(60);
+        riri.insert(61);
+        riri.insert(62);
+        riri.insert(16);
+
+        System.out.print(riri.height()+"\n");
+        System.out.print(riri.size());
 
         riri.printPrettyTree();
+        riri.delete(50);
+        riri.delete(13);
+        riri.delete(60);
+        riri.delete(100);
+        riri.delete(14);
+        riri.delete(10);
+        riri.delete(14);
+        riri.delete(10);
+
+        riri.printPrettyTree();
+        System.out.print(riri.height()+"\n");
+        System.out.print(riri.size());
+        System.out.print(riri.search(14));
+        System.out.print(riri.search(16));
+
+
+
+
+
+
+
+
+
+
 
     }
 }
