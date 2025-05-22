@@ -5,7 +5,6 @@ import javax.swing.*;
 public class AVLTree<T extends Comparable<T>> implements BSTOperations<T> {
     private Node<T> root;
     private int size;
-    private int height;
     public AVLTree() {
         this.root = null;
         this.size = 0;
@@ -48,10 +47,13 @@ public class AVLTree<T extends Comparable<T>> implements BSTOperations<T> {
         if (key == null){
             return false ;
         }
-        Node<T> x = new Node<>(key);
-        root = recursiveInsert(root, x);
-        size++ ;
-        return true;
+        if (!search(key)){
+            Node<T> x = new Node<>(key);
+            root = recursiveInsert(root, x);
+            size++ ;
+            return true;
+        }
+        return false;
     }
     public Node<T> recursiveInsert(Node<T> root, Node<T> y) {
         if (root == null) {
@@ -95,10 +97,13 @@ public class AVLTree<T extends Comparable<T>> implements BSTOperations<T> {
         if (key == null){
             return false ;
         }
-        Node<T> x = new Node<>(key);
-        root = recursiveDelete(root , x);
-        size-- ;
-        return true;
+        if (search(key)){
+            Node<T> x = new Node<>(key);
+            root = recursiveDelete(root , x);
+            size-- ;
+            return true;
+        }
+        return false;
     }
     public Node<T> findMin(Node<T> root) {
         if (root.left == null) {
