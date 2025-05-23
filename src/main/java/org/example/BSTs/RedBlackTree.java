@@ -1,5 +1,6 @@
-package BSTs;
+package org.example.BSTs;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -403,6 +404,12 @@ public class RedBlackTree<T extends Comparable<T>> implements BSTOperations<T> {
         while (x.left != null)
             x = x.left;
         return x;
+    }
+    //----------------------------------------------------
+    //kero is here
+    @Override
+    public JPanel draw(){
+        return new RBTreeVisualizer<>(root);
     }
 }
 

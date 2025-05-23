@@ -1,4 +1,4 @@
-package BSTs;
+package org.example.BSTs;
 
 import javax.swing.*;
 
@@ -12,9 +12,11 @@ public class AVLTree<T extends Comparable<T>> implements BSTOperations<T> {
     private int height(Node<T> node) {
         return node == null ? 0 : node.height;
     }
+
     private int getBalance(Node<T> node) {
         return (node == null) ? 0 : height(node.left) - height(node.right);
     }
+
     public Node<T> RRotation(Node<T> x) {
         Node<T> y = x.left;
         Node<T> z = y.right;
@@ -197,6 +199,9 @@ public class AVLTree<T extends Comparable<T>> implements BSTOperations<T> {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+    }
+    public JPanel draw(){
+        return new TreeVisualizer<>(root);
     }
 
 }

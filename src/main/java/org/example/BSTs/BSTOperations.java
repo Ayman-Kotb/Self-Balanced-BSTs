@@ -1,4 +1,6 @@
-package BSTs;
+package org.example.BSTs;
+
+import javax.swing.*;
 
 public interface BSTOperations<T extends Comparable<T>> {
    boolean insert(T key);
@@ -6,4 +8,5 @@ public interface BSTOperations<T extends Comparable<T>> {
    boolean search(T key);
    int size();
    int height();
+   JPanel draw();
 }

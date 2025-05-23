@@ -1,4 +1,4 @@
-package BSTs;
+package org.example.BSTs;
 
 public class RBNode<T extends Comparable<T>>{
     public T key;
