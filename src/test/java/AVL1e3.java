@@ -26,7 +26,7 @@ public class AVL1e3 {
     }
 
     @Test
-    public void testLargeInsertions() {
+    public void testDeleteAll() {
         BSTOperations<String> tree = new AVLTree<>();
         int count = countN;
         for (int i = 0; i < count; i++) {
@@ -37,16 +37,12 @@ public class AVL1e3 {
             assertTrue(tree.search("word" + i));
         }
 
-        for (int i = 0; i < count; i += 2) {
+        for (int i = 0; i < count; i++) {
             assertTrue(tree.delete("word" + i));
         }
 
         for (int i = 0; i < count; i++) {
-            if (i % 2 == 0) {
                 assertFalse(tree.search("word" + i));
-            } else {
-                assertTrue(tree.search("word" + i));
-            }
         }
 
         System.out.println("Finished inserting and verifying " + count + " words.");

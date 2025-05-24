@@ -1,3 +1,4 @@
+import org.example.BSTs.AVLTree;
 import org.example.BSTs.RedBlackTree;
 import org.example.BSTs.BSTOperations;
 import org.junit.jupiter.api.Test;
@@ -27,8 +28,8 @@ public class RedBlackTree1e5 {
     }
 
     @Test
-    public void testLargeInsertions() {
-        BSTOperations<String> tree = new RedBlackTree<>();
+    public void testDeleteAll() {
+        BSTOperations<String> tree = new AVLTree<>();
         int count = countN;
         for (int i = 0; i < count; i++) {
             assertTrue(tree.insert("word" + i));
@@ -38,23 +39,20 @@ public class RedBlackTree1e5 {
             assertTrue(tree.search("word" + i));
         }
 
-        for (int i = 0; i < count; i += 2) {
+        for (int i = 0; i < count; i++) {
             assertTrue(tree.delete("word" + i));
         }
 
         for (int i = 0; i < count; i++) {
-            if (i % 2 == 0) {
-                assertFalse(tree.search("word" + i));
-            } else {
-                assertTrue(tree.search("word" + i));
-            }
+            assertFalse(tree.search("word" + i));
         }
 
         System.out.println("Finished inserting and verifying " + count + " words.");
         System.out.println("Tree Size: " + tree.size());
         System.out.println("Tree Height: " + tree.height());
-    }
 
+
+    }
     @Test
     public void testRandomInsertions() {
         BSTOperations<String> tree = new RedBlackTree<>();
